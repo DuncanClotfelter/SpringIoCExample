@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="Address" class="Address">
+        <property name="city" value="New York City"/>
+        <property name="state" value="New York"/>
+        <property name="country" value="USA"/>
+        <property name="zipcode" value="10001"/>
+    </bean>
+
+    <bean id="Phone" class="Phone">
+       <property name="mob" value="(212) 831 3004"/>
+    </bean>
+
+    <bean id="Student" class="Student">
+        <property name="id" value="0"/>
+        <property name="name" value="John Doe"/>
+        <property name="ph">
+            <list value-type="Phone">
+                <ref bean="Phone"/>
+            </list>
+        </property>
+        <property name="add">
+            <ref bean="Address"/>
+        </property>
+    </bean>
+</beans>
